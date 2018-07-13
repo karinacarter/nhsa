@@ -1,0 +1,109 @@
+/*
+Theme Name: National Human Service Assembly
+Theme URI:
+Author: Mission Media
+Author URI: http://www.missionmedia.com/
+Description: Template for National Human Service Assembly
+Version: 1
+
+*/
+
+
+@import "compass";
+//@import "compass/reset";
+
+
+/* import the Partials *
+
+ */
+@import "_partials/variables";
+@import "_partials/mixins";
+@import "_partials/typography";
+
+@import "_vendor/slicknav/core";
+@import "_vendor/slicknav/slicknav";
+@import "_vendor/slicknav/theme";
+
+@import "_vendor/slickSlider/slick-theme";
+@import "_vendor/slickSlider/slick";
+@import "_vendor/wordpress/wordpress_core";
+
+
+/*Layout */
+@import "_layouts/grids";
+@import "_layouts/page-article";
+@import "_layouts/page-contact";
+@import "_layouts/page-staff";
+@import "_layouts/page-members";
+
+
+
+
+/* Navigation */
+@import "_navigation/social";
+@import "_navigation/utility";
+@import "_navigation/primary";
+@import "_navigation/breadcrumbs";
+
+/* Componants */
+
+@import "_components/search";
+@import "_components/footer";
+@import "_components/callouts";
+@import "_components/hero-image";
+@import "_components/events";
+@import "_components/contact";
+@import "_components/sidebar";
+@import "_components/pagination";
+
+
+/* Objects */
+
+@import "_objects/buttons";
+
+/**** Stuff that should go to main SCSS file ****/
+body{
+  letter-spacing: 1px;
+  background-color:#FFF;
+  @include background(image-url("bg-zigzags.png"));
+  a{
+    @include link-colors($font-color-links, $font-color-links, $font-color-links, $font-color-links, $font-color-links);
+  }
+}
+
+
+  img.size-full {
+    max-width: 100%;
+    height:auto;
+}
+  .desktop-only{
+    @include breakpoint("sm"){
+      display: none;
+    }
+    @include breakpoint("md"){
+      display: block;
+    }
+    @include breakpoint("lg"){
+      display: block;
+
+    }
+  }
+
+
+
+  .mobile-only{
+
+
+    @include breakpoint("md"){
+      display: none;
+    }
+    @include breakpoint("sm"){
+      display: block;
+
+    }
+    @include breakpoint("lg"){
+      display: none;
+
+    }
+
+  }

@@ -1,0 +1,36 @@
+.members-page {
+  background-color: $white;
+
+.pagination{
+  text-align: center;
+  letter-spacing: 4px;
+  @include centerMaxWidth;
+  padding: $default-padding;
+  color:#c3c3c3;
+  @include fonts('Futura-Medium');
+
+
+}
+  .all_members {
+    @include centerMaxWidth;
+    @include clearfix();
+    .letter {
+      background-color: $background-utility-nav;
+      color: $white;
+      padding: $default-padding/2;
+      @include fonts('Futura-Medium');
+      font-size: 30px;
+
+    }
+    .single-logo {
+      display: inline-block;
+      img {
+        padding: 20px;
+        background-color: #FFF;
+        max-height: 100px;
+        @include box-shadow(rgba(0, 0, 0, 0.1) 5px 5px 5px 0px);
+        margin: 20px;
+      }
+    }
+  }
+  }

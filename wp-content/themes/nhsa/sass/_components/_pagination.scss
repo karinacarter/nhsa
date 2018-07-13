@@ -1,0 +1,14 @@
+.pagination{
+  font-size:18px;
+  text-transform: uppercase;
+  a{
+    @include link-colors($purple, $font-color-links, $purple, $purple, $purple);
+    @include fonts("Futura-Demi");
+    text-decoration: none;
+
+  }
+  .current{
+    @include fonts("Futura-Demi");
+
+  }
+}

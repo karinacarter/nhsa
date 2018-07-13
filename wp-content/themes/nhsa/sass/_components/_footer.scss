@@ -1,0 +1,81 @@
+
+footer {
+  background-color: $background-footer;
+  color: white;
+  @include fonts('Futura-Book');
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 28px;
+  @include clearfix();
+
+
+  .footer-container {
+    .footer-center{
+      a{
+        @include link-colors(#e6e6e6, $white, #e6e6e6, #e6e6e6, #e6e6e6);
+
+      }
+    }
+    a{
+      @include link-colors($white,#e6e6e6, $white, $white, $white);
+
+      text-decoration: none;
+
+    }
+    max-width: $max-width;
+    margin: 0 auto;
+    @include clearfix();
+
+  }
+  box-sizing: border-box;
+
+  .footer-left {
+    width: 30%;
+    float: left;
+    padding: 30px 10px;
+
+  }
+  .footer-right {
+    width: 20%;
+    float: right;
+    clear: right;
+    padding: 30px 10px;
+    text-align: right;
+
+  }
+  .footer-center {
+    width: 40%;
+    float: left;
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  @media (max-width: 830px) {
+    font-size: 14px;
+
+    .footer-left {
+      width: 100%;
+      float: none;
+      padding: 10px;
+      text-align: center;
+
+    }
+    .footer-right {
+      width: 100%;
+      float: none;
+      padding: 10px;
+      text-align: center;
+
+    }
+    .footer-center {
+      width: 100%;
+      float: none;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+}
+
+

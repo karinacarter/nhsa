@@ -1,0 +1,19 @@
+.btn{
+  background-color: $background-purple-button;
+  color: #FFF;
+  text-transform: uppercase;
+  border-radius: $border-radius;
+  padding: 7px 20px;
+  display: inline-block;
+  @include fonts('Futura-Demi');
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  border:2px solid $background-purple-button;
+  @include link-colors(#FFF,#FFF,#FFF,#FFF,#FFF);
+  &:hover {
+    border: 2px solid $purple;
+    background-color: #fff;
+    color: $background-purple-button;
+  }
+}

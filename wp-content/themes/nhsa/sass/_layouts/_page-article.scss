@@ -1,0 +1,76 @@
+.single-events,
+.single {
+  .header-image {
+    background-color: $white;
+    .slides {
+      @include centerMaxWidth;
+    }
+    .slick-dots {
+      position: initial;
+
+      li button {
+        border-color: $purple;
+      }
+      li.slick-active button:before {
+        color: $purple;
+      }
+    }
+  }
+  .main-content {
+
+    max-width: $max-width;
+    margin: 0 auto;
+    @include fonts("Futura-Book");
+    font-size: 18px;
+    letter-spacing: 1px;
+    h1 {
+      font-size: 34px;
+      color: $background-utility-nav;
+      font-weight: normal;
+
+    }
+    .main-left {
+      width: 63.32%;
+      float: left;
+      background-color: #FFF;
+      padding: $default-padding;
+      box-sizing: border-box;
+
+    }
+    .main-right {
+      width: 36.68%;
+      float: right;
+      padding: $default-padding;
+      box-sizing: border-box;
+
+    }
+    .archive-category,
+    .archive-type {
+      background-color: #555;
+      @include fonts("Futura-Demi");
+      font-size: 14px;
+      color: #FFF;
+      padding: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid #555;
+      box-sizing: border-box;
+
+    }
+    .archive-type {
+      background-color: #FFF;
+      color: #555;
+    }
+
+    .tags {
+      color: $purple;
+      @include fonts("Futura-Demi");
+      padding: $default-padding 0;
+      font-size: 16px;
+      a {
+        @include link-colors($purple, $purple, $purple, $purple, $purple);
+        text-decoration: none;
+      }
+    }
+  }
+}

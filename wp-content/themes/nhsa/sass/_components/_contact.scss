@@ -1,0 +1,102 @@
+.page-id-81 .content{
+  @include clearfix();
+  @include filter-gradient(transparent, $white, horizontal); // IE6-9
+  @include background-image(linear-gradient(left, transparent 0%, transparent 70%, $white 71%, $white 100%));
+}
+
+
+.contact-us {
+  @include fonts("Futura-Book");
+  max-width: $max-width;
+  margin: 0 auto;
+  @include clearfix();
+
+
+
+  .mainArea {
+    float: left;
+    width: 31.68%;
+    margin: $default-padding $default-padding/2;
+    padding:$default-padding/2;
+    box-sizing: border-box;
+    background-color:#f0f0f0;
+    .email{
+      background:url(images/icons/envelope.png);
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding-left: 20px;
+      margin-top:10px;
+    }
+    .address{
+      background:url(images/icons/pin.png);
+      background-repeat: no-repeat;
+      background-position: left 5px;
+      padding-left: 20px;
+      margin-top:10px;
+
+    }
+    .phone{
+      background:url(images/icons/phone.png);
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding-left: 20px;
+      margin-top:10px;
+
+    }
+    h3{
+      margin-top:30px;
+      @include fonts("Futura-Demi");
+      text-transform: uppercase;
+      color:#8d9598;
+      font-size:14px;
+    }
+    img.size-full{
+      width: auto;
+    }
+    a{
+
+      @include link-colors($purple, $purple, $purple, $purple, $purple);
+      @include fonts("Futura-Demi");
+      text-decoration: none;
+
+
+    }
+
+  }
+  .sidebar {
+    float: right;
+    width: 63.32%;
+    background-color: $white;
+    padding: $default-padding;
+    box-sizing: border-box;
+  }
+
+  div.wpcf7 {
+    background-color: #FFF;
+    .wpcf7-text {
+      margin:0 auto;
+      width: 75%;
+      border: 1px solid #cecfd0;
+      padding: 10px
+    }
+    .wpcf7-textarea {
+      border: 1px solid #cecfd0;
+      width: 75%;
+    }
+    .wpcf7-form {
+      background-color: #FFF;
+    }
+
+    .wpcf7-submit {
+      @include buttonStyles('basic') {
+
+      }
+
+    }
+    p:last-of-type {
+      text-align: center;
+    }
+
+  }
+}
+

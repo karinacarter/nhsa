@@ -1,0 +1,48 @@
+.utility-nav{
+  @include fonts('Futura-Book');
+
+  min-height: 20px;
+  max-width: $max-width;
+
+  @include horizontal-list();
+  margin:0 auto;
+  padding: 0;
+  letter-spacing: 1px;
+  #menu-utility-nav{
+    margin:2px 0;
+    padding:0;
+  }
+
+  a{
+    color: #fff;
+    text-decoration: none;
+    padding:10px;
+    font-size: 17.5px;
+    display: block;
+    @include link-colors(#fff, $background-nav-primary, #fff, #fff, #fff);
+
+  }
+.current-menu-item a{
+  @include link-colors($background-nav-primary, $background-nav-primary, $background-nav-primary, $background-nav-primary, $background-nav-primary);
+  @include removeDots();
+
+}
+  @include breakpoint(sm) {
+    display:none;
+
+  }
+}
+
+.utility-navigation{
+  float:right;
+  margin-right: 14px;
+}
+#searchform{
+  float:right;
+}
+
+.blueBar{
+  background-color: $background-utility-nav;
+  min-height: 50px;
+  margin:0 auto;
+}

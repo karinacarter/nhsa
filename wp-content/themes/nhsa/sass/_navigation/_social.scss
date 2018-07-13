@@ -1,0 +1,40 @@
+.social-links-menu {
+  @include clearfix();
+  float: left;
+  width: 12%;
+
+  #menu-social-links {
+
+    //padding:10px 5%;
+    margin: 14px 0px;
+    padding: 0;
+    a {
+      width: 23px;
+      height: 23px;
+      display: block;
+      padding: 0;
+    }
+    //Facebook Icon
+    #menu-item-64 a {
+      @include replace-text("social-icons/facebook.png");
+    }
+    //Twitter Icon
+
+    #menu-item-65 a {
+      @include replace-text("social-icons/twitter.png");
+    }
+    //Instagram Icon
+    #menu-item-66 a {
+      @include replace-text("social-icons/instagram.png");
+    }
+
+  }
+
+
+
+  @include breakpoint(lg) {
+    width: 23%;
+
+  }
+  }
+

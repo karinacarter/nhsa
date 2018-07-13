@@ -1,0 +1,41 @@
+.breadcrumbs {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(4, 7, 6, .53);
+  color: #fff;
+  padding: 15px 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  position: relative;
+  top: -40px;
+  //margin-bottom:-45px;
+  p {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    @include fonts('Futura-Book');
+
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    @include link-colors($white, $white, $white, $white, $white);
+
+  }
+  @include breakpoint(sm) {
+    top: 5px;
+    background-color: rgba(4, 7, 6, .75);
+    margin-bottom: $mobile-default-padding;
+  }
+
+}
+
+.single-events .breadcrumbs,
+.single-resources .breadcrumbs,
+.single .breadcrumbs,
+.post-type-archive .breadcrumbs,
+.search-results .breadcrumbs {
+  top: 0px;
+  background-color: rgba(4, 7, 6, .75);
+
+}

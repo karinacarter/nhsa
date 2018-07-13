@@ -1,0 +1,985 @@
+/****************************************
+*
+* Table of Contents
+*
+* 1. Twitter Block
+* 2. Purple Callouts
+* 3. Text Block
+* 4. Sub Pages Block
+* 5. Resources Block
+* 6. Member Organzation Block
+* 7. Featured Article
+* 8. WYSIWYG Block
+* 9. Latest Update Block
+* 10. Featured Events Block
+* 11. Purple Pages Block
+* 12. Collaboration | Public Policy | Initiatives Block
+
+*
+****************************************/
+
+/****************************************
+*
+* 1. Twitter Block
+*
+****************************************/
+
+.block-twitter {
+  padding: $default-padding;
+  @include clearfix;
+  @include fonts('Futura-Book');
+  position: relative;
+  font-size: 32px;
+  line-height: 36px;
+  text-align: center;
+  @include background(image-url("bg-twitter.jpg"));
+  background-size: cover;
+  color: #fff;
+.twitter-logo{
+  padding:0 $default-padding/2;
+
+}
+  .btn {
+    @include buttonStyles("white-border");
+    @include link-colors(#FFF, $purple, #FFF, #FFF, #FFF);
+  }
+  .twitter-left-arrow {
+    position: absolute;
+    top: 41%;
+    left: 10px;
+
+  }
+
+  .slick-prev, .slick-next {
+    width: 24px;
+    height: 42px;
+  }
+  a {
+    @include link-colors(#FFF, #FFF, #FFF, #FFF, #FFF);
+
+  }
+
+  .slides {
+    padding: $default-padding;
+    @include centerMaxWidth;
+    @include breakpoint(sm){
+      width:80%;
+
+    }
+  }
+
+  @include breakpoint(sm) {
+    font-size: 16px;
+  }
+  .twitter-left-arrow,
+  .twitter-right-arrow {
+    display: none;
+  }
+  .tweets {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+}
+
+/****************************************
+*
+* 2. Purple Callouts
+*
+****************************************/
+
+.block-callouts {
+  @include clearfix;
+  @include fonts('Futura-Book');
+
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
+
+  .call-out {
+    position: relative;
+
+    width: 50%;
+    float: left;
+    @include background(image-url("bg-twitter.jpg"));
+    background-size: cover;
+    @include box-sizing(border-box);
+    white-space: normal;
+    padding: 5%;
+    @include clearfix();
+
+    @include overlay($purple);
+
+  }
+  .call-out-text {
+    position: inherit;
+  }
+
+  .btn {
+    @include buttonStyles("white-background");
+
+  }
+  h4 {
+    @include fonts('Futura-Demi');
+    font-size: 36px;
+    margin: 0px;
+
+    text-transform: uppercase;
+    a {
+      @include link-colors(#FFF, #FFF, #FFF, #FFF, #FFF);
+
+      text-decoration: none;
+      @include addLine(#FFF);
+
+    }
+
+  }
+
+  @include breakpoint(sm) {
+    .call-out {
+      width: 100%;
+      display: block;
+      margin-top: 5px;
+      padding: 5%;
+
+    }
+
+  }
+}
+
+/****************************************
+*
+* 3. Text Block
+*
+****************************************/
+
+.block-text-block {
+  @include fonts('Futura-Book');
+  font-size: 21px;
+  letter-spacing: 1px;
+  background-color: #FFF;
+  padding: 2% 15%;
+  text-align: center;
+  margin: 15px 0 20px 0;
+
+  h3 {
+    color: $font-color-links;
+    font-size: 30px;
+    @include fonts('Futura-Bold');
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include addLine($font-color-links);
+    width: 60%;
+    margin: 0 auto;
+
+  }
+  .content {
+    width: 52%;
+    margin: 0 auto;
+  }
+  @include breakpoint(sm) {
+
+    padding: $mobile-default-padding;
+    letter-spacing: 2px;
+    text-align: left;
+    font-size: 15px;
+
+    h3 {
+      font-size: 20px;
+      padding-bottom: $default-padding;
+      @include removeDots();
+      width: 100%;
+
+    }
+    .content {
+      width: 100%;
+    }
+  }
+
+}
+
+/****************************************
+*
+* 4. Sub Pages Block
+*
+****************************************/
+.block-subpages {
+  background-color: #ebebeb;
+
+  padding: 100px;
+  .content {
+    @include centerMaxWidth();
+    @include clearfix;
+    @include fonts('Futura-Book');
+    font-size: 18px;
+    line-height: 28px;
+    color: #0f171b;
+
+  }
+  .subPage {
+    @include box-sizing(border-box);
+    width: 45%;
+    background-color: #FFF;
+    @include box-shadow(rgba(0, 0, 0, 0.1) 5px 5px 5px 0px);
+    margin: 2.5%;
+    //display: inline-block;
+    float: left;
+    padding: $default-padding;
+    max-width: 562px;
+
+  }
+
+  h3 {
+    color: $font-color-links;
+    font-size: 30px;
+    @include fonts('Futura-Medium');
+    padding: 0;
+    margin: 0;
+    padding-right: 5px;
+    line-height: 44px;
+
+    letter-spacing: 1px;
+    margin-bottom: $default-padding;
+    a {
+      @include link-colors($font-color-links, $font-color-links, $font-color-links, $font-color-links, $font-color-links);
+
+      text-decoration: none;
+
+    }
+  }
+
+  .teaser_text {
+
+    margin-bottom: $default-padding;
+  }
+  .btn {
+    margin: 10px 0;
+    padding: 2px;
+    min-width: 150px;
+    text-align: center;
+  }
+
+  @include breakpoint(sm) {
+    padding: 0px;
+    .subPage {
+      width: 100%;
+      padding: 7%;
+      @include box-shadow(rgba(0, 0, 0, 0.1) 5px 5px 5px 0px);
+      height: inherit !important;
+    }
+  }
+}
+
+/****************************************
+*
+* 5. Resources Block
+*
+****************************************/
+
+.resource {
+  background-color: #FFFFFF;
+}
+
+.block-resources {
+  @include centerMaxWidth();
+  line-height: 25px;
+  padding: 5% 0;
+  @include fonts('Futura-Book');
+
+  h3 {
+    color: $font-color-links;
+    font-size: 30px;
+    @include fonts('Futura-Medium');
+    display: inline-block;
+    letter-spacing: 1px;
+    margin: 0px;
+
+  }
+  a {
+    @include link-colors($purple, $purple, $purple, $purple, $purple);
+
+    text-decoration: none;
+    @include fonts('Futura-Demi');
+    &:before {
+      content: url(images/next.png);
+      margin-left: -27px;
+      padding: 0 6px;
+    }
+
+  }
+  .block-header {
+    @include clearfix();
+    padding: 10px 0;
+    a {
+      @include link-colors($white, $purple, $white, $white, $white);
+
+      text-decoration: none;
+      float: right;
+      &:before {
+        content: '';
+        margin-left: initial;
+        padding: 0;
+
+      }
+    }
+  }
+  .item {
+    width: 43%;
+    display: inline-block;
+    margin: 10px 3%;
+    vertical-align: top;
+    @include breakpoint(sm) {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .block-header a {
+      float: none;
+    }
+    a {
+      &:before {
+        content: url(images/next.png);
+        margin-left: 0px;
+        padding: 0 6px;
+      }
+    }
+  }
+}
+
+/****************************************
+*
+* 6. Member Organzation Block
+*
+****************************************/
+
+.block-members {
+  padding: 5%;
+  @include fonts('Futura-Demi');
+
+  text-align: center;
+  @include centerMaxWidth();
+  a {
+    text-decoration: none;
+  }
+  img {
+    padding: 20px;
+    background-color: #FFF;
+    max-height: 100px;
+    @include box-shadow(rgba(0, 0, 0, 0.1) 5px 5px 5px 0px);
+    margin: 20px;
+  }
+  img.slick-arrow {
+    background-color: transparent;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 42px;
+    width: 24px;
+    @include box-shadow(rgba(0, 0, 0, 0) 5px 5px 5px 0px);
+
+  }
+  .slick-slider .slick-track, .slick-slider .slick-list {
+    //width: 80%;
+    margin: 0 auto;
+  }
+  h3 {
+    color: #253545;
+    font-size: 30px;
+
+  }
+  @include breakpoint(sm) {
+    width:80%;
+  }
+
+}
+
+/****************************************
+*
+* 7. Featured Article
+*
+****************************************/
+
+.block-featured-article {
+
+  @include clearfix();
+  //@include centerMaxWidth();
+  background-color: $purple;
+  //padding: 5%;
+  line-height: 120%;
+  .image{
+    width:100%;
+    height: 500px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .featured-image {
+    float: left;
+    width: 50%;
+    padding: 10px 0;
+    margin-bottom:-4px;
+  }
+
+  .featured-content {
+    background-color: $purple;
+    color: #FFF;
+    margin-top: -5px;
+    float: right;
+    width: 50%;
+    padding: 5%;
+    @include box-sizing(border-box);
+  }
+  .slick-dotted.slick-slider{
+    margin: 0;
+  }
+  .slick-dots{
+    width: 50%;
+    right: 0;
+    text-align: left;
+    padding: 5%;
+    @include box-sizing(border-box);
+
+  }
+  .slick-dots li button{
+    background-color: #a97997;
+    border: 2px solid #a97997;
+
+  }
+  .slick-dots li.slick-active button{
+    border: 2px solid $white;
+  }
+  h3 {
+    @include fonts('Futura-Bold');
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #a97998;
+
+  }
+  .article-title {
+
+    @include fonts('Futura-Book');
+    font-size: 30px;
+    display: block;
+    margin: 5px 0;
+    line-height: 35px;
+
+  }
+
+  .featured-links {
+    margin-top: 5%;
+    a {
+      margin-right: 20px;
+      font-weight: bold;
+    }
+  }
+  a {
+    @include link-colors(#FFF, #FFF, #FFF, #FFF, #FFF);
+    text-decoration: none
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint(sm) {
+    .featured-content,
+    .featured-image {
+      width: 100%;
+      float: none;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      max-height: inherit;
+    }
+    .featured-links a {
+      display: block;
+
+    }
+  }
+}
+
+/****************************************
+*
+* 8. WYSIWYG Block
+*
+****************************************/
+
+.block-wyswig {
+  @include fonts('Futura-Book');
+  font-size: 20px;
+  line-height: 25px;
+  @include background-image(linear-gradient(#fefefe, #f7f7f8));
+  @include clearfix();
+  padding: 5%;
+  .content {
+    @include centerMaxWidth();
+    //{headings(all)}{
+    //
+    //    margin-top: $default-padding;
+    //  }
+  }
+
+  ul.bullets {
+
+    @include pretty-bullets("CHECK.png", 17px, 20px, 25px, 20px);
+
+    @include centerMaxWidth();
+    &:before {
+
+    }
+
+    margin-top: 30px;
+    li {
+      display: inline-block;
+      width: 24%;
+      @include box-sizing(border-box);
+      vertical-align: text-top;
+      font-size: 16px;
+    }
+  }
+  ul {
+    @include pretty-bullets("bullet-teal.png", 15px, 15px, 25px, 40px);
+    li {
+      width: 75%;
+      margin-top: $default-padding/2;
+    }
+  }
+  .content {
+    border-bottom: 1px solid #cecfd0;
+    @include clearfix();
+    padding-bottom: 20px;
+    @include centerMaxWidth();
+
+    h2 {
+      @include fonts('Futura-Demi');
+      font-size: 40px;
+      line-height: 40px;
+      color: $background-utility-nav;
+      padding: 0 0 20px 0;
+      margin-top: 0;
+
+    }
+    h3{
+      margin-top:0;
+    }
+    .image {
+      margin: 0 0 $default-padding $default-padding;
+      float: right;
+
+    }
+  }
+
+  @include breakpoint(sm) {
+    .content {
+      h2 {
+        font-size: 30px;
+      }
+      .image {
+        float: none;
+      }
+    }
+    img {
+      width: 100%;
+    }
+    ul.bullets li {
+      display: block;
+      width: 100%;
+    }
+  }
+
+}
+
+/****************************************
+*
+* 9. Latest Update Block
+*
+****************************************/
+.block-latest-updates {
+
+  @include background-image(url(images/bg-updates.jpg));
+  background-size: cover;
+  text-align: center;
+  padding-bottom: $default-padding;
+  .block-content {
+    padding: $default-padding;
+    padding-bottom: $default-padding/2;
+    @include centerMaxWidth();
+
+    @include clearfix();
+
+    h4 {
+      @include fonts("Futura-Demi");
+      margin: 0px;
+      font-size: 30px;
+      text-align: center;
+      color: $background-utility-nav;
+
+    }
+    .update-item {
+      @include fonts("Futura-Book");
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-align: left;
+      width: 30%;
+      float: left;
+      @include box-shadow(rgba(0, 0, 0, 0.1) 5px 5px 5px 0px);
+      background-color: #FFF;
+      margin: 1.5%;
+      box-sizing: inherit;
+
+    }
+    a {
+      @include fonts("Futura-Demi");
+      @include link-colors($purple, $purple, $purple, $purple);
+      margin: 10px 0;
+      display: block;
+      padding: $default-padding;
+      text-decoration: none;
+
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .teaser_text {
+      padding: 0 $default-padding;
+    }
+
+  }
+  .btn {
+    @include buttonStyles("basic");
+
+  }
+  .nocatname .category{
+    display: none;
+  }
+  .category {
+    position: absolute;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, .79);
+    color: $white;
+  }
+  @include breakpoint(sm) {
+    .block-content {
+      padding: 0;
+      margin-bottom: $mobile-default-padding;
+      h4 {
+        display: none;
+      }
+      .update-item {
+        display: none;
+        width: 100%;
+        &:first-of-type {
+          display: block;
+        }
+      }
+
+    }
+  }
+
+}
+
+body.home {
+  .block-latest-updates {
+
+    @include background-image(url(images/bg-home-updates.jpg));
+
+    .btn {
+
+      @include buttonStyles("basic");
+    }
+
+  }
+}
+
+/****************************************
+*
+* 10. Featured Events Block
+*
+****************************************/
+
+.block-events {
+
+  @include filter-gradient(#ffffff, #e6e6e6, horizontal); // IE6-9
+  @include background-image(linear-gradient(left, #ffffff 0%, #ffffff 70%, #e6e6e6 71%, #e6e6e6 100%));
+
+  @include clearfix;
+  .block-content {
+    @include centerMaxWidth();
+
+  }
+  .featured-event {
+    background-color: #FFF;
+    width: 63.32%;
+    float: left;
+    @include fonts("Futura-Book");
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #071c31;
+    padding: $default-padding;
+    @include box-sizing(border-box);
+
+    h2 {
+      @include fonts("Futura-Heavy");
+      font-size: 16px;
+      color: #071c31;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    a {
+      @include link-colors(#071c31, $purple, #071c31, #071c31);
+      text-decoration: none;
+      @include fonts("Futura-Book");
+      font-size: 34px;
+
+    }
+    .btn {
+      @include buttonStyles("basic");
+
+    }
+    .teaser_text {
+      margin-bottom: $default-padding;
+    }
+    span {
+      width: 32%;
+      display: inline-block;
+      @include fonts("Futura-Demi");
+      font-size: 18px;
+      color: $background-utility-nav;
+      vertical-align: text-top;
+
+    }
+  }
+
+  .other-events {
+    background-color: #e6e6e6;
+    width: 36.68%;
+    float: right;
+    padding: $default-padding;
+    @include box-sizing(border-box);
+    h3 {
+      @include fonts("Futura-Heavy");
+      text-transform: uppercase;
+      font-size: 16px;
+      margin: 0 0 $default-padding 0;
+    }
+    a {
+      @include link-colors($purple, $purple, $purple, $purple);
+      text-decoration: none;
+      font-size: 18px;
+      @include fonts("Futura-Book");
+
+    }
+    .btn {
+      @include buttonStyles("basic");
+
+    }
+    .other-event-item {
+      margin-bottom: $default-padding;
+      &:last-of-type {
+        margin-bottom: $default-padding*2;
+      }
+    }
+    .date {
+      @include fonts("Futura-Medium");
+      font-size: 15px;
+
+    }
+    .events-button {
+      padding-top: $default-padding;
+    }
+  }
+  @include breakpoint(sm) {
+    .featured-event {
+      width: 100%;
+      background-color: #e0e0e0;
+      h2 {
+        color: #828282;
+      }
+      a {
+        @include fonts("Futura-Demi");
+        font-size: 16px;
+
+      }
+      .eventdate-location {
+        display: none;
+      }
+    }
+    .other-events {
+
+      display: none;
+
+    }
+  }
+}
+
+/****************************************
+*
+* 11. Purple Pages Block
+*
+****************************************/
+
+.block-pages-purple {
+  @include clearfix;
+  position: relative;
+.content{    @include clearfix();
+}
+  .image {
+
+    img {
+      width: 100%;
+      height: auto;
+
+    }
+  }
+  .sub-purple-page {
+    width: 33.3%;
+    float: left;
+    border-top: 10px solid #FFF;
+    border-bottom: 10px solid #FFF;
+    @include overlay($purple);
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+  }
+  .sub-purple-page.over {
+
+      border-top: 10px solid $purple;
+      border-bottom: 10px solid $purple;
+    &:before{
+      background-color: rgba(118, 39, 93, 1);
+
+    }
+
+  }
+  .purpleoverlay {
+    background-color: rgba(118, 39, 93, .55);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-top: 10px solid #FFF;
+    border-bottom: 10px solid #FFF;
+
+  }
+
+  h3 {
+    @include fonts('Futura-Demi');
+    font-size: 24px;
+    color: $white;
+    text-transform: uppercase;
+    a {
+      @include link-colors($white, $white, $white, $white);
+      text-decoration: none;
+    }
+  }
+  .text {
+
+    margin: 0 auto;
+    text-align: center;
+    color: $white;
+    padding: $default-padding *2;
+    @include fonts('Futura-Book');
+    font-size: 18px;
+    @include box-sizing(border-box);
+    position: inherit;
+    //top:0;
+    z-index: 2;
+
+    .subhead {
+      margin: 0 0 30px 0;
+      text-transform: initial;
+    }
+  }
+  .btn {
+    @include buttonStyles("white-border");
+
+  }
+
+  @include breakpoint(sm) {
+    .sub-purple-page {
+      position: relative;
+      display: none;
+      width: 100%;
+      float: none;
+      .text {
+        width: 100%;
+      }
+      &:first-of-type,
+      &:nth-last-of-type(2) {
+        display: block;
+      }
+
+    }
+    .btn {
+      @include buttonStyles("white-background");
+
+    }
+  }
+
+}
+
+/****************************************
+*
+* 12. Collaboration | Public Policy | Initiatives Block
+*
+****************************************/
+
+.block-cppi {
+  background: linear-gradient(left, $white, $white) no-repeat 0 50px;
+  @include clearfix();
+  text-align: center;
+
+  .content {
+    @include clearfix();
+    @include centerMaxWidth();
+    padding: $default-padding;
+    padding-top: 0;
+  }
+  .cppiPages {
+    width: 33.3%;
+    float: left;
+    .teaser_text{
+      padding: 0 $default-padding;
+    }
+  }
+  h3 {
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+      @include fonts("Futura-Bold");
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+  @include breakpoint(sm) {
+
+    background: #f3f7f8;
+    .content {
+      padding: 0px;
+    }
+    .cppiPages {
+      padding: $mobile-default-padding;
+      @include box-sizing(border-box);
+      .teaser_text{
+        padding: 0 $mobile-default-padding;
+      }
+      width: 100%;
+      &:nth-of-type(even) {
+
+        background-color: $white;
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+
+}
