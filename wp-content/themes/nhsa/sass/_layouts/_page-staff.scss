@@ -1,0 +1,105 @@
+.staff-page {
+
+  .staff {
+    width: 33.33%;
+    float: left;
+    cursor:pointer;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .bio {
+    display: none;
+    background-color: $font-color-gray;
+    width: 100%;
+    color: $white;
+    position: absolute;
+    left: 0;
+    img {
+      width: auto;
+      height: auto;
+    }
+    .content {
+      @include centerMaxWidth();
+    }
+
+
+  }
+
+.staff.active{
+  h2{
+    color:$background-utility-nav;
+  }
+}
+  h2 {
+    background-color: $white;
+    text-align: center;
+    margin: 0;
+    color: $purple;
+    @include fonts("Futura-Medium");
+    font-size: 21px;
+    padding: $default-padding;
+    padding-bottom: 0;
+    margin-top:-5px;
+  }
+
+  .title {
+    background-color: $white;
+    text-align: center;
+    @include fonts("Futura-Book");
+    font-size: 16px;
+    color:#200e02;
+    padding: $default-padding;
+    padding-top: 0;
+  }
+  .detail {
+    display: none;
+    background-color: #525252;
+    width: 100%;
+    color: $white;
+    @include fonts("Futura-Book");
+    font-size: 21px;
+    float: left;
+    padding: $default-padding;
+    box-sizing: border-box;
+    a{
+      @include link-colors($white, $white, $white, $white, $white);
+
+    }
+    .detail-content {
+      @include centerMaxWidth;
+
+    }
+    h2 {
+      background: none;
+      text-align: left;
+      color: $white;
+      @include fonts("Futura-Medium");
+      font-size: 30px;
+      padding: 0;
+
+    }
+    .content {
+      @include clearfix();
+    }
+    .close {
+      float: left;
+      width: 10%;
+      padding: 7px 0;
+      cursor:pointer;
+
+
+    }
+
+  }
+
+  @include breakpoint(sm) {
+    .staff {
+      width: 50%;
+      float: left;
+    }
+  }
+
+
+  }

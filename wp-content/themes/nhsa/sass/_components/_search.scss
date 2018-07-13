@@ -1,0 +1,79 @@
+/*Todo: Fix the search bar. */
+#searchform{
+  margin-top:10px;
+
+  #s{
+    background-color: $background-search;
+    border: 0;
+    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding:7px 5px;
+    color:#fff;
+  }
+  #searchsubmit{
+    box-sizing: border-box;
+    background-color: $background-search;
+    border: 0;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color:#fff;
+    position: relative;
+    left: -5px;
+    @include replace-text("icons/search.png");
+    padding:7px 25px;
+
+
+
+  }
+  label.screen-reader-text{
+
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+
+}
+
+.archive-sidebar #searchform{
+  float: none;
+  #s{
+    background-color: #FFF;
+    border: 1px solid #cfd0d1;
+    border-right: 0;
+    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding:7px 5px;
+    color: $purple;
+    left: 0;
+    right:0;
+
+  }
+  #searchsubmit{
+    box-sizing: border-box;
+    background-color: #FFF;
+    border: 1px solid #cfd0d1;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-left: 0;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color:$purple;
+    position: relative;
+    left: -4px;
+    @include replace-text("icons/search-sidebar.png");
+    padding:7px 25px;
+  }
+}

@@ -1,0 +1,73 @@
+.widget {
+
+  background-color: #f0f0f0;
+  padding: $default-padding;
+  @include clearfix();
+  h3 {
+    @include fonts("Futura-Demi");
+    font-size: 36px;
+    color: $background-utility-nav;
+    margin: 0px;
+  }
+  .btn {
+    margin: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 255px;
+  }
+}
+#archive-filters{
+  padding-top:$default-padding;
+
+}
+.archive-sidebar {
+  text-transform: uppercase;
+
+  .filter {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: $default-padding*2 0;
+    select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 0;
+      padding: $default-padding;
+
+    }
+ul {
+  @include fonts("Futura-Demi");
+  background-image: url(images/arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: 95% 20px;
+  color: $purple;
+  border:1px solid #CCC;
+  text-transform: uppercase;
+  margin:0;
+  padding:0;
+  background-color: $white;
+  position: relative;
+  @include no-bullet();
+  li{
+
+    padding:$default-padding;
+  }
+  ul{
+    top:0 !important;
+    border:0;
+  li{
+    background-color: #FFF;
+    a{
+      text-decoration: none;
+      padding:$default-padding;
+      &:hover{
+        color:$purple;
+      }
+    }
+  }}
+
+}
+    }
+}

@@ -1,0 +1,154 @@
+/*Todo: Add in my usual Mixins */
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($class) {
+  @if $class == sm {
+    @media (max-width: 741px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 742px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+/*Type */
+
+@mixin fonts($size) {
+
+  @if $size == 'Futura-Medium' {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+  } @else if $size == 'Futura-Book' {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  } @else if $size == 'Futura-Demi' {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  } @else if $size == 'Futura-Bold' {
+    font-family: futura-pt-bold, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+  }
+}
+
+/* Design Elements */
+
+@mixin addDots($location) {
+  &:after {
+    width: 100%;
+    content: '...';
+    letter-spacing: 3px;
+    text-align: center;
+    display: block;
+    font-size: 120%;
+    @include fonts('Futura-Bold');
+
+  }
+}
+
+
+@mixin removeDots() {
+  &:after {
+    width: 100%;
+    content: '';
+    letter-spacing: 3px;
+    text-align: center;
+    display: inherit;
+    font-size: 120%;
+    @include fonts('Futura-Bold');
+
+  }
+
+}
+
+@mixin addLine($color) {
+  &:after {
+    width: 34px;
+    content: ' ';
+    text-align: center;
+    display: block;
+    height: 4px;
+    margin: 20px auto;
+    background-color: $color;
+  }
+}
+
+
+@mixin overlay($color) {
+  &:before {
+    top:0;
+    position: absolute;
+    width: 100%;
+    content: ' ';
+    left: 0;
+    height: 100%;
+    background-color: rgba(119, 41, 94, 0.9);
+  }
+}
+
+
+@mixin buttonStyles($type) {
+  @if $type == 'white-border' {
+    background-color: transparent;
+    border: 2px solid #fff;
+    margin: 20px 0;
+    @include fonts('Futura-Demi');
+
+    font-size: 16px;
+    line-height: 25px;
+  } @else if $type == 'white-background' {
+
+    background-color: #fff;
+    border: 2px solid #fff;
+    margin: 40px 0;
+    @include fonts('Futura-Demi');
+    @include link-colors($purple, $white, $purple, $purple, $purple);
+    font-size: 16px;
+    line-height: 25px;
+    min-width: 200px;
+    &:hover {
+      background-color: inherit;
+      border-color: #FFF;
+
+    }
+
+  } @else if $type == 'basic' {
+    background-color: $background-purple-button;
+    @include link-colors($white, $white, $white, $white);
+    text-transform: uppercase;
+    border-radius: $border-radius;
+    border: 2px solid $background-purple-button;
+    padding: 7px 20px;
+    @include fonts('Futura-Demi');
+  //display: inherit;
+    font-size: 16px;
+    line-height: 25px;
+    &:hover {
+      background-color: inherit;
+      border-color: $background-purple-button;
+      color:$background-purple-button;
+
+    }
+  }
+
+}
+
+@mixin centerMaxWidth(){
+
+  max-width: $max-width;
+  margin: 0 auto;
+}
