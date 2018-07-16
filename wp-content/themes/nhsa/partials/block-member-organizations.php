@@ -34,7 +34,7 @@ $post_objects = get_posts(array(
 	)
 ));
 
-$Category = get_sub_field( 'Category' );
+$Category = get_sub_field( 'category' );
 var_dump($Category);
 $query_args = array();
 

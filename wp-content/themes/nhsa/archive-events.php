@@ -114,8 +114,17 @@ get_header(); ?>
                             class="archive-type"><?= the_field( type ); ?></span> <?php } ?>
 
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	                <?php $location = get_field('location'); ?>
-                    <div class="location"><?= str_replace(', USA' , '', $location['address']);?></div>
+	                <?php $location = get_field('location');
+
+                    if(!is_array($location)){
+                    $actual_location = get_field( 'location' );
+
+                    }else{
+                    $actual_location = str_replace( ', USA', '', $location['address'] );
+
+                    } ?>
+
+                    <div class="location"><?= $actual_location;?></div>
 
 	                <?php
 	                echo dsp_correct_event_datetime( get_field( 'start_date' ), get_field( 'end_date' ) );

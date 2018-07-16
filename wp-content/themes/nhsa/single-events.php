@@ -59,7 +59,18 @@ get_header(); ?>
 	        <?php if (!empty(get_field( type))){?> <span class="archive-type"><?=the_field( type); ?></span> <?php } ?>
             <h1><?= the_title( ); ?></h1>
 	        <?php $location = get_field('location'); ?>
-            <div class="location"><?= str_replace(', USA' , '', $location['address']);?></div>
+
+            <?php
+            if(!is_array($location)){
+            $actual_location = get_field( 'location' );
+
+            }else{
+            $actual_location = str_replace( ', USA', '', $location['address'] );
+
+            } ?>
+
+
+            <div class="location"><?= $actual_location;?></div>
 	        <?php
 	        echo dsp_correct_event_datetime( get_field( 'start_date' ), get_field( 'end_date' ) );
 
