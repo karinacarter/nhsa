@@ -30,9 +30,7 @@
         $post_objects = get_posts(array(
             'posts_per_page'	=> 3,
             'post_type'			=> 'resources',
-            'post_status' => 'publish',
-            'orderby'     => 'publish_date',
-            'order'       => 'DESC',
+            'order'				=> 'ASC',
             'meta_query' => $meta_query
 
         ));
@@ -53,20 +51,18 @@
                 ?>
                 <div class="slide">
                     <div class="featured-image">
-                        <?php if(get_field('image')) {
-	                        $image    = get_field( 'image' );
-	                        $size     = 'latestUpdateImage'; // (thumbnail, medium, large, full or custom size)
-	                        $imageURL = wp_get_attachment_image_url( $image[0]['image'], $size );
-                        }else {
-	                        $imageURL = '/wp-content/themes/nhsa/images/default/' . $category . '.jpg';
-                        }
+                        <?php if(get_field('image')){
+	                    $image = get_field('image');
+	                    $size = 'latestUpdateImage'; // (thumbnail, medium, large, full or custom size)
 	                    ?>
 
-                        <div class="image" style='background-image:url(<?=$imageURL;?>)'></div>
-
-
+                        <div class="image " style="background-image: url('<?= wp_get_attachment_image_url( $image, $size);?>')"></div>
+                        <?php }else{
+                        ?><div class="image " style="background-image: url('/wp-content/themes/nhsa/images/default/<?=$category?>.jpg')"></div><?php
+                        }
+                        ?>
                     </div>
-                    <div class="featured-content">
+                    <div class="featured-content ">
                         <h3>FEATURED ARTICLES</h3>
                         <a href="<?= the_permalink(); ?>" class="article-title"><?= the_title(); ?></a><br>
                         <?= the_excerpt(); ?>
@@ -75,7 +71,6 @@
                             <a href="/resources">VIEW ALL ARTICLES</a>
                         </div>
                     </div>
-
                 </div>
 
 
