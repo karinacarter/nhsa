@@ -426,17 +426,19 @@
     color: #FFF;
     float: right;
     width: 50%;
-    padding: 5%;
+    padding: 5% 5% 8% 5%;
     @include box-sizing(border-box);
   }
   .slick-dotted.slick-slider{
     margin: 0;
   }
+  .slide{
+    display: none;  }
   .slick-dots{
     width: 50%;
     right: 0;
     text-align: left;
-    padding: 2%;
+    padding: 0 5% 5% 5%;
     @include box-sizing(border-box);
 
   }

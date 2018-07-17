@@ -296,13 +296,13 @@ var featuredContentHeight = 0;
             featuredContentHeight = $(this).height();
         }
 
-        console.log($(this).height());
+
 
 
         console.log(featuredContentHeight);
     });
     $('.featured-content').height(featuredContentHeight);
-    $('.featured-image .image ').height(featuredContentHeight);
+    $('.featured-image .image ').height($('.featured-content').outerHeight() - 20);
 
 
 

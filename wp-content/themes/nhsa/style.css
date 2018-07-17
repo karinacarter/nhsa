@@ -605,9 +605,10 @@ footer .footer-center { width: 40%; float: left; padding: 30px 10px; text-align:
 .block-featured-article { overflow: hidden; *zoom: 1; line-height: 120%; }
 .block-featured-article .image { width: 100%; background-position: center center; background-size: cover; background-repeat: no-repeat; }
 .block-featured-article .featured-image { float: left; width: 50%; padding: 10px 0; }
-.block-featured-article .featured-content { background-color: #76275d; color: #FFF; float: right; width: 50%; padding: 5%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.block-featured-article .featured-content { background-color: #76275d; color: #FFF; float: right; width: 50%; padding: 5% 5% 8% 5%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .block-featured-article .slick-dotted.slick-slider { margin: 0; }
-.block-featured-article .slick-dots { width: 50%; right: 0; text-align: left; padding: 2%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.block-featured-article .slide { display: none; }
+.block-featured-article .slick-dots { width: 50%; right: 0; text-align: left; padding: 0 5% 5% 5%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .block-featured-article .slick-dots li button { background-color: #a97997; border: 2px solid #a97997; }
 .block-featured-article .slick-dots li.slick-active button { border: 2px solid #FFFFFF; }
 .block-featured-article h3 { font-family: futura-pt-bold, sans-serif; font-style: normal; font-weight: 700; font-size: 14px; letter-spacing: 1px; color: #a97998; }
