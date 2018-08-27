@@ -3,9 +3,8 @@
 ?>
     <div class="block-resources">
         <div class="block-header"><h3>Resources</h3>
-            <a href="/resources/filters/<?=$current_category;?>/all" class="btn">VIEW ALL RESOURCES</a>
+            <a href="/resources/filters/all/resource" class="btn">VIEW ALL RESOURCES</a>
         </div>
-
 
 		<?php
 
@@ -14,25 +13,44 @@
 			'relation' => 'AND',
 		);
 
+		$tax_query = array(
+			'relation' => 'OR',
+		);
+		$all_tags = get_the_terms( get_the_ID(), 'tags');
+		if($all_tags){
+			$all_artices_link = '/tags/';
+			foreach ($all_tags as &$value) {
+				$addTags = array(
+					'taxonomy'         => 'tags',
+					'terms'            => &$value,
+					'field'            => 'slug',
+				);
+				array_push( $tax_query, $addTags );
 
-		if ( $current_category != "none" ) {
-			$categoryArray = array(
-				'key'     => 'category',
-				'value'   => $current_category,
+			}
+
+
+		}
+
+
+
+
+			$typeArray = array(
+				'key'     => 'type',
+				'value'   => 'resource',
 				'compare' => '='
 			);
 
-			array_push( $meta_query, $categoryArray );
-		} else {
-			$current_category = "";
-		}
+			array_push( $meta_query, $typeArray );
+
 //		echo get_field( 'count');
 		// query events order
 		$post_objects = get_posts( array(
 			'posts_per_page' => 6,
 			'post_type'      => 'resources',
 			'order'          => 'ASC',
-			'meta_query'     => $meta_query
+			'meta_query'     => $meta_query,
+			'tax_query'      => $tax_query,
 
 		) );
 

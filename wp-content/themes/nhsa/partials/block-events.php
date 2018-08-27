@@ -49,7 +49,20 @@
 				),
 			),
 		);
-
+		$meta_query = array(
+				'relation' => 'AND',
+				array(
+					'key'   => 'featured',
+					'value' => '1',
+				),
+				array(
+					'key'     => 'start_date',
+					'value'   => date( Ymd ),
+					'compare' => '>=',
+					'type'    => 'DATE',
+				),
+			);
+		var_dump($meta_query);
 		// The Query
 		$query = get_posts( $args );
 

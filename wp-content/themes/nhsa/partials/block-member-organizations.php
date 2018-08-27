@@ -1,11 +1,26 @@
 <div class="block-members">
-<?php //var_dump(get_sub_field("category"));?>
 <h3>Member Organizations</h3>
 <?php
+$meta_query =
 
+	array(
+		'relation' => 'OR',
+		
 
-$member_cats=array();
+	);
+if(!empty(get_sub_field("member_org_category"))){
+foreach (get_sub_field("member_org_category") as &$mvalue) {
+	$mcat = array(
+		'key'     => 'member_category',
+		'value'   => $mvalue,
+		'compare' => 'LIKE'
+	);
 
+	array_push( $meta_query, $mcat );
+	$mcat = '';
+}
+
+}
 
 // query events order
 $post_objects = get_posts(array(
@@ -13,29 +28,11 @@ $post_objects = get_posts(array(
 	'post_type'			=> 'member_organizations',
 	'order'				=> 'ASC',
 	'orderby'			=> 'rand',
-	'relation' => 'OR', // Optional, defaults to "AND"
-	array(
-		'key'     => 'category',
-		'type'   => 'PurchasingPoint',
-		'compare' => '='
-	),
-	array(
-		'relation' => 'AND',
-		array(
-			'key'     => 'category',
-			'type'   => 'ncfy',
-			'compare' => '='
-		),
-		array(
-			'key'     => 'category',
-			'type'   => 'Home',
-			'compare' => '='
-		)
-	)
+//	'relation' => 'OR', // Optional, defaults to "AND"
+    'meta_query' => $meta_query,
+
 ));
 
-$Category = get_sub_field( 'category' );
-var_dump($Category);
 $query_args = array();
 
     if( $post_objects ): ?>

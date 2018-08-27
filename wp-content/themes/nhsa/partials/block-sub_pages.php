@@ -22,19 +22,27 @@
 		<?php endif;
 		if ( $show_articles != "No" ) { ?>
 
-        <div class="tags"><?php $terms = wp_get_object_terms( get_the_ID(), 'tags', '', ',' ); ?></div>
 
         <?php
+            $all_tags = get_the_terms( get_the_ID(), 'tags');
+            if(!$all_tags){
+	            $all_artices_link = '/resources/filters/'.get_field('category',  $post_object->ID).'/all/';
 
+            }else{
+	            $all_artices_link = '/tags/';
+			foreach ($all_tags as &$value) {
+				$all_artices_link .= ",".$value->slug;
+			}
+                
 
-    $category = get_field('category',  $post_object->ID);
-var_dump(count($terms));
+            }
+
             ?>
 
             <div class="subPage">
-                <h3><a href="<?php the_permalink(); ?>">Articles</a></h3>
+                <h3><a href="<?=$all_artices_link?>">Articles</a></h3>
                 <div class="teaser_text"><?= the_sub_field( 'article_text' ); ?></div>
-                <a href="/resources/filters/<?=$category?>/all/" class="btn">Learn More</a>
+                <a href="<?=$all_artices_link?>" class="btn">Learn More</a>
             </div>
 
 			<?php

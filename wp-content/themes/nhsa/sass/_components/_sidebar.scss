@@ -2,7 +2,23 @@
 
   background-color: #f0f0f0;
   padding: $default-padding;
+  margin-bottom: $mobile-default-padding;
   @include clearfix();
+  @include no-bullets;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: $default-padding;
+      font-weight: bold;
+      a {
+        text-decoration: none;
+        @include link-colors(#484848, $purple);
+      }
+    }
+
+  }
+
   h3 {
     @include fonts("Futura-Demi");
     font-size: 36px;
@@ -18,10 +34,12 @@
     max-width: 255px;
   }
 }
-#archive-filters{
-  padding-top:$default-padding;
+
+#archive-filters {
+  padding-top: $default-padding;
 
 }
+
 .archive-sidebar {
   text-transform: uppercase;
 
@@ -37,37 +55,44 @@
       padding: $default-padding;
 
     }
-ul {
-  @include fonts("Futura-Demi");
-  background-image: url(images/arrow-down.png);
-  background-repeat: no-repeat;
-  background-position: 95% 20px;
-  color: $purple;
-  border:1px solid #CCC;
-  text-transform: uppercase;
-  margin:0;
-  padding:0;
-  background-color: $white;
-  position: relative;
-  @include no-bullet();
-  li{
+    ul {
+      @include fonts("Futura-Demi");
+      background-image: url(images/arrow-down.png);
+      background-repeat: no-repeat;
+      background-position: 95% 20px;
+      color: $purple;
+      border: 1px solid #CCC;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+      background-color: $white;
+      position: relative;
+      @include no-bullet();
+      li {
 
-    padding:$default-padding;
-  }
-  ul{
-    top:0 !important;
-    border:0;
-  li{
-    background-color: #FFF;
-    a{
-      text-decoration: none;
-      padding:$default-padding;
-      &:hover{
-        color:$purple;
+        padding: $default-padding;
       }
-    }
-  }}
+      ul {
+        top: 0 !important;
+        border: 0;
+        li {
+          background-color: #FFF;
+          a {
+            text-decoration: none;
+            padding: $default-padding;
+            &:hover {
+              color: $purple;
+            }
+          }
+        }
+      }
 
-}
     }
+  }
+}
+
+
+#related-articles {
+  li:nth-of-type(4) {
+display: none  }
 }

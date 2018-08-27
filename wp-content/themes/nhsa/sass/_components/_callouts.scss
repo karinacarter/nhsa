@@ -406,8 +406,9 @@
 
   @include clearfix();
   //@include centerMaxWidth();
-  background-color: $purple;
+  //background-color: $purple;
   //padding: 5%;
+
   line-height: 120%;
   .image{
     width:100%;
@@ -431,16 +432,20 @@
     width: 50%;
     padding: 5%;
     @include box-sizing(border-box);
+    padding-bottom:100px;
   }
   .slick-dotted.slick-slider{
     margin: 0;
   }
   .slick-dots{
     width: 50%;
-    right: 0;
+    right: -5%;
+    bottom:5%;
     text-align: left;
-    padding: 5%;
+    //padding: 5% 5% 2% 5%;
     @include box-sizing(border-box);
+
+
 
   }
   .slick-dots li button{
@@ -497,6 +502,12 @@
     }
     .featured-links a {
       display: block;
+
+    }
+
+    .slick-dots{
+      position: unset;
+      width: 100%;
 
     }
   }

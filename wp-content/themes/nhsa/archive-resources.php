@@ -12,11 +12,48 @@ get_header(); ?>
 	<?php
 
 	global $query_string;
-	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$type     = ( get_query_var( 'type' ) ) ? get_query_var( 'type' ) : 'all';
 	$category = ( get_query_var( 'category' ) ) ? get_query_var( 'category' ) : 'all';
-	get_template_part( 'partials/block', 'hero-image' );
+
+
+	global $wp_query;
+	//	var_dump($wp_query->query_vars);
+	$meta_query = array(
+		'relation' => 'AND',
+	);
+
+	$showheader = '';
+	if ( $type !== 'all' ) {
+		if ( $type != 'resource' ) {
+			$showheader = 1;
+		}
+		$typeArray = array(
+			'key'     => 'type',
+			'value'   => $type,
+			'compare' => '='
+		);
+
+		array_push( $meta_query, $typeArray );
+	}
+	if ( $category !== 'all' ) {
+		$showheader = 1;
+
+		$categoryArray = array(
+			'key'     => 'category',
+			'value'   => $category,
+			'compare' => '='
+		);
+		array_push( $meta_query, $categoryArray );
+	}
+
+	if ( $showheader !== 1 ) {
+		get_template_part( 'partials/block', 'hero-image' );
+
+	}
 	?>
+
+
     <div class="breadcrumbs">
 		<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
 			yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
@@ -27,31 +64,7 @@ get_header(); ?>
 
 	<?php
 
-	global $wp_query;
-//	var_dump($wp_query->query_vars);
-	$meta_query = array(
-		'relation' => 'AND',
-	);
 
-
-	if ( $type !== 'all' ) {
-
-		$typeArray = array(
-			'key'     => 'type',
-			'value'   => $type,
-			'compare' => '='
-		);
-
-		array_push( $meta_query, $typeArray );
-	}
-	if ( $category != 'all' ) {
-		$categoryArray = array(
-			'key'     => 'category',
-			'value'   => $category,
-			'compare' => '='
-		);
-		array_push( $meta_query, $categoryArray );
-	}
 	$query_args   = explode( "&", $query_string );
 	$search_query = array(
 		'posts_per_page' => 5,
@@ -83,7 +96,7 @@ get_header(); ?>
                             class="archive-type"><?= the_field( type ); ?></span> <?php } ?>
 
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	                <?=get_the_date(); ?>
+					<?= get_the_date(); ?>
 
                     <div><?= the_excerpt(); ?></div>
                     <div class="tags"><?php echo get_the_term_list( get_the_ID(), 'tags', '', ',' ); ?></div>
@@ -141,7 +154,7 @@ get_header(); ?>
 
 					if ( isset( $field[ ID ] ) ) {
 						if ( $type == 'resource' AND $name == 'type' ) {
-						}else{
+						} else {
 							// create filter
 							?>
                             <!-- STart Loop -->

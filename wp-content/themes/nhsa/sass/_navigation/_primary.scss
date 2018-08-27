@@ -1,4 +1,7 @@
 .primary-navigation {
+  /***Sucker fish **/
+  @include suckerfish(auto, 300px);
+  /***Sucker fish **/
 
   ul {
     margin: 0;
@@ -24,16 +27,21 @@
     display: block;
     padding: 10px 7px;
   }
+  #nav-menu-item-56 ul ul{
+    margin: -2.5em 0 0 300px;
+
+  }
   .sub-menu,
   .children {
     @include box-shadow(rgba(0, 0, 0, 0.1) 5px 5px 5px 0px);
-
-    display: none;
+    list-style: none;
+    line-height: 1;
+    //display: none;
     position: absolute;
     background-color: #ade0e7;
     padding: 0px;
-    width: 300px;
-    top: 0px;
+   /* width: 300px;
+    top: 0px;*/
     z-index: 100000;
     @include fonts("Futura-Demi");
     font-size: 16px;
@@ -41,7 +49,7 @@
       @include link-colors($font-color-links, $font-color-links, $font-color-links, $font-color-links, $font-color-links);
       margin: 0;
       @include removeDots();
-      padding: $default-padding;
+      padding: 4%;
 
     }
     li {
@@ -70,12 +78,20 @@
 
     }
     ul {
-      position: absolute;
-      left: 300px !important;
-      top: 0 !important;
+      margin: -3.2em 0 0 -300px;
 
     }
-    .children {
+
+    @media (min-width: 1250px) {
+
+
+      ul {
+        margin: -3.2em 0 0 300px;
+
+      }
+
+    }
+      .children {
       background-color: #cceff3;
       a:hover {
         background-color: #ade0e7;
@@ -263,6 +279,13 @@
   }
   a {
     padding: 0 5px;
+  }
+  #nav-menu-item-91 ul ul{
+    margin: -3.5em 0 0 300px;
+
+  }
+  ul ul{
+
   }
 
   .menu-item-87 {

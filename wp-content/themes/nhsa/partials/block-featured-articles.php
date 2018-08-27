@@ -51,8 +51,8 @@
                 $category =  strtolower($category);
                 $category = str_replace(' ', '-', $category);
                 ?>
-                <div class="slide">
-                    <div class="featured-image">
+                <div class="slide " >
+                    <div class="featured-image ">
                         <?php if(get_field('image')) {
 	                        $image    = get_field( 'image' );
 	                        $size     = 'latestUpdateImage'; // (thumbnail, medium, large, full or custom size)
@@ -62,11 +62,11 @@
                         }
 	                    ?>
 
-                        <div class="image" style='background-image:url(<?=$imageURL;?>)'></div>
+                        <div class="image" style='background-image:url(<?=$imageURL;?>); height:100vh; max-height: 500px;background-size: cover; background-position: center center'></div>
 
 
                     </div>
-                    <div class="featured-content">
+                    <div class="featured-content matchContentHeight2">
                         <h3>FEATURED ARTICLES</h3>
                         <a href="<?= the_permalink(); ?>" class="article-title"><?= the_title(); ?></a><br>
                         <?= the_excerpt(); ?>

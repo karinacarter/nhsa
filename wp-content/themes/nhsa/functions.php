@@ -574,24 +574,28 @@ function add_extra_tablenav($post_type){
 }
 
 
-add_filter( 'parse_query', 'prefix_parse_filter' );
-function  prefix_parse_filter($query) {
-	global $pagenow;
-//	print $_GET['categories-name'];
-	$current_page = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
+add_filter('manage_edit-member_organizations_columns', 'my_columns');
+function my_columns($columns) {
+	$columns['member_category'] = ' Category';
 
-	if ( is_admin() &&
-	     'resources' == $current_page &&
-	     'edit.php' == $pagenow &&
-	     isset( $_GET['categories-name'] ) &&
-	     $_GET['categories-name'] != '') {
+	return $columns;
+}
 
-		$categories_name = $_GET['categories-name'];
-		$query->query_vars['meta_key'] = 'category';
-		$query->query_vars['meta_value'] = $categories_name;
-		$query->query_vars['meta_compare'] = '=';
+add_action('manage_posts_custom_column',  'my_show_columns');
+function my_show_columns($name) {
+	global $post;
+	switch ($name) {
+
+
+		case 'member_category':
+			$member_category = get_post_meta($post->ID, 'member_category', true);
+			if(!empty($member_category)){
+			foreach ($member_category as &$mvalue) {
+				echo $mvalue . "<BR>";
+			}}
 	}
 }
+
 
 
 ?>
